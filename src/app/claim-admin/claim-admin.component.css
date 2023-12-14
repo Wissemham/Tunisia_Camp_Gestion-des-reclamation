@@ -1,0 +1,308 @@
+table {
+  width: 500%;
+}
+body {
+  padding: 0px;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.paginator-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.selected-page-size {
+  font-size: 14px;
+  order: 1;
+  margin-right: 10px;
+}
+
+.mat-paginator {
+  order: 2;
+}
+
+.btn-neon{
+  padding: 10px 20px;
+  border-radius: 8px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  color: white;
+  border: none;
+  background-color: rgb(223, 7, 7);
+  box-shadow: 0 0 25px rgb(7, 198, 223);
+}
+  .btn-neon:hover{
+    box-shadow: 0 5px rgb(7, 198, 223),
+    0 0 25px rgb(7, 198, 223),
+    0 0 50px rgb(7, 198, 223),
+    0 0 100px rgb(7, 198, 223),
+    0 0 125px rgb(7, 198, 223);
+    color: black;
+}
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+ /* background-clip: text;*/
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 8px;
+  text-align: left;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+}
+
+.responsive-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.responsive-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+@media only screen and (max-width: 600px) {
+  .responsive-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table td {
+    display: block;
+    text-align: right;
+  }
+
+  .responsive-table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+.btn-neon1{
+  padding: 10px 20px;
+  border-radius: 8px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  color: white;
+  border: none;
+  background-color: rgb(16, 110, 30);
+  box-shadow: 0 0 25px rgb(7, 198, 223);
+}
+  .btn-neon1:hover{
+    box-shadow: 0 5px rgb(7, 198, 223),
+    0 0 25px rgb(7, 198, 223),
+    0 0 50px rgb(7, 198, 223),
+    0 0 100px rgb(7, 198, 223),
+    0 0 125px rgb(7, 198, 223);
+    color: black;
+}
+.animate-charcter
+{
+   text-transform: none;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+ /* background-clip: text;*/
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.btn-neon2{
+  padding: 10px 20px;
+  border-radius: 8px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  color: white;
+  border: none;
+  background-color: rgb(25, 201, 160);
+  box-shadow: 0 0 25px rgb(232, 239, 40);
+}
+  .btn-neon2:hover{
+    box-shadow: 0 5px rgb(7, 198, 223),
+    0 0 25px rgb(7, 198, 223),
+    0 0 50px rgb(7, 198, 223),
+    0 0 100px rgb(7, 198, 223),
+    0 0 125px rgb(7, 198, 223);
+    color: black;
+}
+.animate-charcter
+{
+   text-transform: none;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+ /* background-clip: text;*/
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.btn-neon3{
+  padding: 10px 20px;
+  border-radius: 8px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  color: white;
+  border: none;
+  background-color: rgb(9, 29, 248);
+  box-shadow: 0 0 25px rgb(110, 40, 239);
+}
+  .btn-neon3:hover{
+    box-shadow: 0 5px rgb(7, 198, 223),
+    0 0 25px rgb(7, 198, 223),
+    0 0 50px rgb(7, 198, 223),
+    0 0 100px rgb(7, 198, 223),
+    0 0 125px rgb(7, 198, 223);
+    color: black;
+}
+.animate-charcter
+{
+   text-transform: none;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+ /* background-clip: text;*/
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.btn-neon4{
+  padding: 10px 20px;
+  border-radius: 8px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  color: white;
+  border: none;
+  background-color: rgba(140, 24, 189, 0.741);
+  box-shadow: 0 0 25px rgb(232, 239, 40);
+}
+  .btn-neon4:hover{
+    box-shadow: 0 5px rgb(7, 198, 223),
+    0 0 25px rgb(7, 198, 223),
+    0 0 50px rgb(7, 198, 223),
+    0 0 100px rgb(7, 198, 223),
+    0 0 125px rgb(7, 198, 223);
+    color: black;
+}
+.animate-charcter
+{
+   text-transform: none;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+ /* background-clip: text;*/
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 50px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

@@ -1,0 +1,11 @@
+<form>
+  <div>
+    <label for="weight">Weight:</label>
+    <input type="number" name="weight" [(ngModel)]="delivery.weight">
+  </div>
+  <div>
+    <label for="done">Done:</label>
+    <input type="checkbox" name="done" [(ngModel)]="delivery.done">
+  </div>
+  <button type="button" (click)="addDeliveryWeight()">Submit</button>
+</form>

@@ -1,0 +1,36 @@
+<table border="1" style="border:1px solid black;margin-left:auto;margin-right:auto;" class="table table-striped ">
+  <thead>
+    <tr id="header">
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Username</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Email</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Telephone</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Location</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Done</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Weight</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Delivery Date</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Adresse</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Price</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Delivery List ID</th>
+<th [ngStyle]="{'background-color': 'green', 'color': 'white'}">User ID</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let delivery of deliveries | paginate: { itemsPerPage: 5, currentPage: p };">
+      <td>{{ delivery[0] }}</td>
+      <td>{{ delivery[1] }}</td>
+      <td>{{ delivery[2] }}</td>
+      <td>{{ delivery[3] }}</td>
+      <td>{{ delivery[4] }}</td>
+      <td>{{ delivery[5] }}</td>
+      <td>{{ delivery[6] }}</td>
+      <td>{{ delivery[7] }}</td>
+      <td>{{ delivery[8] }}</td>
+      <td>{{ delivery[9] }}</td>
+      <td>{{ delivery[10] }}</td>
+
+    </tr>
+  </tbody>
+</table>
+<pagination-controls class="ngx-pagination" (pageChange)="p = $event"></pagination-controls>
+

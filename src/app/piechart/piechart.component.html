@@ -1,0 +1,37 @@
+<div class="contour">
+  <h2 class="center" >Statistic Number of Claims </h2>
+</div>
+<div class="left-side">
+<div style="width: 440px; height: 440px;" >
+  <canvas class="pie-chart"  baseChart
+     [data]="pieChartData"
+     [labels]="pieChartLabels"
+     [type]="'pie'">
+   </canvas>
+</div>
+<h2 style="color: maroon;">the total number of claims in each category</h2>
+</div>
+
+<div class="right-side">
+  <form #claimForm="ngForm">
+<div>
+  <label>Start Date:</label>
+  <input type="date" [(ngModel)]="startDate"name="startDate" #Date1="ngModel"   required>
+  <span *ngIf="Date1.invalid && Date1.touched" style="color:red"> Date is required</span>
+  <br>
+  <br>
+  <label>End Date:</label>
+  <input type="date" [(ngModel)]="endDate" name="endDate" #Date2="ngModel" required>
+  <span *ngIf="Date2.invalid && Date2.touched" style="color:red"> Date is required</span>
+  <br>
+  <button type="button" class="btn btn-success" #showChartBtn (click)="getCounts()"  [disabled]="!claimForm.valid" style="margin-right: 10px;margin-top: 10px;">Show Chart</button>
+  <button type="reset" class="btn btn-danger"(click)="reset()" style="margin-top: 10px;">Reset</button>
+  <br>
+  <div *ngIf="showChart" style="width: 440px; height: 440px;" >
+  <canvas id="chart" #chart ></canvas>
+</div>
+  <h2 *ngIf="showCounts" style="color: mediumblue;">number of the claim between the {{startDate}} and the {{endDate}}</h2>
+ <h1> <div *ngIf="showError" style="color:red">No claims found between the entered dates.</div></h1>
+</div>
+</form>
+

@@ -1,0 +1,41 @@
+<!--<button (click)="passDataToParent()"><svg fill="currentColor" viewBox="0 0 24 24" width="2em" height="2em" color="black" class="x1lliihq x1k90msu x2h7rmj x1qfuztq x198g3q0 x1qx5ct2 xw4jnvo"><path d="M18.707 5.293a1 1 0 0 0-1.414 0L12 10.586 6.707 5.293a1 1 0 0 0-1.414 1.414L10.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414L12 13.414l5.293 5.293a1 1 0 0 0 1.414-1.414L13.414 12l5.293-5.293a1 1 0 0 0 0-1.414z"></path></svg>
+</button>-->
+<div class="add-claim">
+  <fieldset style="background-color: green;">
+    <h2  class="title-typed">{{ title }}</h2>
+  </fieldset>
+
+<form (ngSubmit)="onSubmit()" #claimForm="ngForm">
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" #name="ngModel" name="title" [(ngModel)]="claim.title" ngModel required>
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Title is required</div>
+  </div>
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select class="form-control" id="category" name="category" #category="ngModel" [(ngModel)]="claim.category" ngModel required>
+      <option value="FEEDBACK">FEEDBACK</option>
+      <option value="COMPLAIN">COMPLAIN</option>
+    </select>
+    <div *ngIf="category.touched && category?.errors?.['required']" class="alert alert-danger">You Must Select this</div>
+  </div>
+  <div class="form-group">
+    <label for="content">Content</label>
+    <textarea class="form-control" id="content" name="content" minlength="20" #content="ngModel" rows="5" cols="30"[(ngModel)]="claim.content" ngModel required [class.is-invalid]="content.invalid && content.touched"></textarea>
+    <div *ngIf="content.touched && content?.errors?.['required']" class="alert alert-danger">content is required</div>
+    <span style="color: red;"   *ngIf="content.dirty && content?.errors?.['minlength']" >Content must be at least 20 caracteres</span>
+  </div>
+  <br>
+  <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" ngModel [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)&& !isFormReset" theme="dark" siteKey="6LciT2ElAAAAANJ2GDoevmX11caB5wU4ISzTlu3E"></re-captcha>
+  <input type="hidden" #recaptchaResponse name="recaptchaResponse">
+  <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched) && !isFormReset" class="invalid-feedback">
+    <!--<div *ngIf="recaptcha.touched && !recaptcha.response && !isFormReset" class="invalid-feedback">-->
+    <div *ngIf="recaptcha.touched && recaptcha.errors?.['required']">This field is required.</div>
+    <!--<div *ngIf="recaptcha.errors?.['invalid']">Invalid captcha, please try again.</div>-->
+</div>
+  <button type="submit" class="btn btn-primary" [disabled]="claimForm.invalid">{{ claim.idClaim ? 'Save' : 'Add' }}</button>
+  <div id="notification-container"></div>
+  <button type="button" class="btn btn-secondary" (click)="resetClaimForm()">Reset</button>
+</form>
+</div>

@@ -1,0 +1,20 @@
+<table class="responsive-table" border="1" style="border:1px solid black;margin-left:auto;margin-right:auto;" class="table table-striped">
+  <thead>
+    <tr id="header">
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">ID</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Location</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Delivery Date</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Weight</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Done</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let delivery of deliveries">
+      <td>{{delivery.idDelivery}}</td>
+      <td>{{ delivery.location }}</td>
+      <td>{{ delivery.delivery_date }}</td>
+      <td>{{ delivery.weight }}</td>
+      <td>{{delivery.done}}</td>
+    </tr>
+  </tbody>
+</table>

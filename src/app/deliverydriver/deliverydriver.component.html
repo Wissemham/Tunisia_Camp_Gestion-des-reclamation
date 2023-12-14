@@ -1,0 +1,18 @@
+<button class="button1" (click)="closeModal()"><svg fill="currentColor" viewBox="0 0 24 24" width="2em" height="2em" color="black" class="x1lliihq x1k90msu x2h7rmj x1qfuztq x198g3q0 x1qx5ct2 xw4jnvo"><path d="M18.707 5.293a1 1 0 0 0-1.414 0L12 10.586 6.707 5.293a1 1 0 0 0-1.414 1.414L10.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414L12 13.414l5.293 5.293a1 1 0 0 0 1.414-1.414L13.414 12l5.293-5.293a1 1 0 0 0 0-1.414z"></path></svg>
+</button>
+<fieldset style="background-color: green;">
+  <!--<h2 class="typing-text">{{ title }}</h2>-->
+  <h2 id="title">{{title}}</h2>
+</fieldset>
+<form (ngSubmit)="onSubmit()"#calcul="ngForm">
+  <label for="depart">Depart:</label>
+  <input type="text" id="depart" name="depart" [(ngModel)]="depart" ngModel required >
+  <br>
+  <label for="destination">Destination:</label>
+  <input type="text" id="destination" name="destination" [(ngModel)]="destination">
+  <br>
+  <button type="submit">Calculate Price</button>
+  <p>{{pricedelivery}}</p>
+</form>
+
+<!--<p *ngIf="price !== undefined">Price: {{ price }}</p>-->

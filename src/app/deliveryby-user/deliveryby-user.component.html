@@ -1,0 +1,16 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Delivery Date</th>
+      <th>Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let delivery of deliveries">
+      <td>{{ delivery.location }}</td>
+      <td>{{ delivery.delivery_date }}</td>
+      <td>{{ delivery.weight }}</td>
+    </tr>
+  </tbody>
+</table>

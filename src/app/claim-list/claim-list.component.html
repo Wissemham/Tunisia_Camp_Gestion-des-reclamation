@@ -1,0 +1,113 @@
+<!------------------front------------------------------->
+<!-- Favicons -->
+<link href="/assets/front/assets/img/favicon.png" rel="icon">
+<link href="/assets/front/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="/assets/front/assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="/assets/front/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/front/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="/assets/front/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="/assets/front/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="/assets/front/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="/assets/front/assets/css/style.css" rel="stylesheet">
+<header id="header" class="fixed-top header-transparent">
+  <app-header-user></app-header-user>
+</header>
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+  <div class="hero-container" data-aos="fade-up">
+    <h1>Welcome to Squad</h1>
+    <h2>We are team of talented designers making websites with Bootstrap</h2>
+    <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
+  </div>
+</section><!-- End Hero -->
+<main id="main">
+
+    <br>
+    <button class="btn btn-outline-primary add" (click)="openClaimForm()"><i class="fa-solid fa-plus fa-2xl" style="color:green"></i></button>
+<div *ngIf="claims$ && claims.length">
+  <h2>List of Claims</h2>
+  <div class="search-container">
+  <input type="text" [(ngModel)]="searchText" class="form-control1" placeholder="Search...">
+  <!--<fa-icon [icon]="['fas', 'search']"></fa-icon>-->
+  <fa-icon [icon]="faSearch"></fa-icon>
+</div>
+   <table  border="1" style="border:1px solid black;margin-left:auto;margin-right:auto;" class="table table-striped ">
+
+    <thead>
+      <tr id="header">
+        <th (click)="order('Index')" >Index <i class="fa fa-sort"></i></th>
+        <th (click)="order('title')" >Title <i class="fa fa-sort"></i></th>
+        <th (click)="order('category')" >Category <i class="fa fa-sort"></i></th>
+        <th (click)="order('content')" >Content <i class="fa fa-sort"></i></th>
+        <th (click)="order('creation')" >Date <i class="fa fa-sort"></i></th>
+        <th [ngStyle]="{ 'color': 'DarkBlue'}">Update</th>
+        <th [ngStyle]="{ 'color': 'red'}">Delete</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr *ngFor="let claim of (claims | search: searchText) | orderBy: orderKey : reverse | paginate: { itemsPerPage: 10, currentPage: p };let i = index">
+        <!--<tr *ngFor="let claim of (claims | search: searchText) | orderBy: orderKey : reverse ">-->
+        <td>{{i+1}}</td>
+        <td>{{claim.title}}</td>
+        <td>{{claim.category}}</td>
+        <td>{{claim.content}}</td>
+        <td>{{claim.creation }}</td>
+        <td>
+          <button class="btn" (click)="modifyClaim(claim.idClaim,claim)"><i class="fa-solid fa-pen-to-square fa-2xl" style="color: #0d35d3; ;"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn" (click)="deleteClaim(claim.idClaim)"><i class="fa-solid fa-trash-can fa-2xl" style="color: #f70202; "></i>
+          </button>
+          <div  aria-live="polite" toastContainer id="toast-custom"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #claimFormModal let-modal>
+    <div class="modal-header">
+     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+       <span aria-hidden="true">&times;</span>
+     </button>
+      <h4 class="modal-title" id="modal-basic-title">{{ claim.idClaim ? 'Edit Claim' : 'Add Claim' }}</h4>
+      <!--<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>-->
+    </div>
+    <div class="modal-body">
+     <app-claim-form (dataToPassToParent)="receiveDataFromChild($event)"></app-claim-form>
+    </div>
+  </ng-template>
+
+ <pagination-controls class="ngx-pagination" (pageChange)="p = $event"></pagination-controls>
+ <ng-confirm></ng-confirm>
+</div>
+  <!--</div>-->
+</main>
+<br>
+<footer id="footer">
+  <app-footer-user></app-footer-user>
+</footer>
+<!------------------------front-------------------------->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="/assets/front/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="/assets/front/assets/vendor/aos/aos.js"></script>
+<script src="/assets/front/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/front/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/assets/front/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/assets/front/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/assets/front/assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="/assets/js/main.js"></script>
+

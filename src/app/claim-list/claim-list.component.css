@@ -1,0 +1,154 @@
+form1 {
+  width: 400px; /* adjust width as needed */
+  height: 450px; /* adjust height as needed */
+  border: 1px solid #992323; /* optional border for visual clarity */
+  padding: 10px; /* optional padding for spacing */
+  background-color: #FF3152;
+}
+/*re-captcha.is-invalid > div {
+  border: 1px solid #dc3545 !important;
+  border-radius: 0.2rem;
+  background-color: black;
+}*/
+
+.left1 {
+  float: left;
+  width: 30%;
+  height: 100%;
+}
+
+.right1 {
+  float: right;
+  width: 60%;
+  height: 100%;
+  padding: 10px;
+}
+.btn-primary {
+  background-color: blue;
+  color: white;
+}
+
+.btn-success {
+  background-color: green;
+  color: white;
+}
+table {
+ /* border-collapse: collapse;
+  width: 100%;*/
+ /* transform: translate(-50%, -50%);*/
+
+  border-collapse: collapse;
+  width: 90%;
+  height: 200px;
+  border: 1px solid #bdc3c7;
+  box-shadow: 2px 2px 12px rgba(186, 28, 28, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+.ngx-pagination{
+  text-align: center;
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid DarkSlateGray;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+.btn-primary{
+  margin-left: 20px;
+}
+.search-container {
+  position: relative;
+  background-color: black;
+  margin-bottom: 10px;
+}
+.form-control1{
+  background-color: black;
+  width: 890px;
+
+}
+
+.search-container input[type="text"] {
+  padding-left: 30px;
+  color: #f2f2f2;
+}
+
+.search-container fa-icon {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  color:#f2f2f2;
+}
+/*#toast-custom {
+ position: fixed;
+  top: 50px;
+  right: 20px;
+  bottom: 30px;
+}*/
+/*#toast-container{
+  top: 70%;
+
+}
+/*.toast-container-custom {
+  top: 50px;
+  bottom: auto;
+}*/
+#header {
+  background-color: #16a085;
+  color: #fff;
+}
+tr:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.02);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 768px) {
+  table {
+      width: 90%;
+  }
+}
+tr:nth-child(odd){
+
+	background-color: lightblue;
+
+}
+
+tr:nth-child(odd):hover{
+
+	background-color: dodgerblue;
+
+	color: white;
+
+	transform: scale(1.05);
+
+	transition: transform 300ms ease-in;
+
+}
+
+tr:nth-child(even){
+
+	background-color: #ededed;
+
+}
+
+tr:nth-child(even):hover{
+
+	background-color: lightgray;
+
+	transform: scale(1.05);
+
+	transition: transform 300ms ease-in;
+}
+.add{
+  float: right;
+  margin-right: 5%;
+}
+

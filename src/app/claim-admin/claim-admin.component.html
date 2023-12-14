@@ -1,0 +1,55 @@
+
+<button class="btn btn-outline-primary btn-sm btn-neon2" (click)="getClaimsSortedBySentiment()">Sort Claims by Sentiment</button>
+<p></p>
+<button class="btn btn-primary btn-sm btn-neon3" (click)=" getAllClaims()">Actualiser</button>
+<p></p>
+<select class="btn btn-primary btn-sm btn-neon4" [(ngModel)]="selectedState" (ngModelChange)="getAllByState(selectedState)">
+  <option *ngFor="let state of states" [value]="state.value">{{ state.name }}</option>
+</select>
+<p class="animate-charcter">Number of Claims {{filteredClaimsCount}} out of {{totalClaims}} claims.</p>
+<div class="container">
+  <table class="responsive-table"  border="1" style="border:1px solid black;margin-left:auto;margin-right:auto;" class="table table-striped">
+  <thead>
+    <tr id="header">
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">ID</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">iduser</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Title</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Category</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Description</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Creation Date</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Status</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">sentimentScore</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">update</th>
+      <th [ngStyle]="{'background-color': 'SpringGreen', 'color': 'white'}">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let claim of claims | slice: (paginator.pageIndex * paginator.pageSize): ((paginator.pageIndex + 1) * paginator.pageSize)">
+      <td>{{claim.idClaim}}</td>
+      <td>{{claim.user.idUser}}</td>
+
+      <td>{{claim.title}}</td>
+      <td>{{claim.category}}</td>
+      <td>{{claim.content}}</td>
+      <td>{{claim.creation | date:'yyyy-MM-dd'}}</td>
+      <td>{{claim.state}}</td>
+      <td>{{claim.sentimentScore}}</td>
+      <td>
+        <button class="btn btn-outline-success btn-sm btn-neon1" (click)="onModifyEtatClaims(iduser, claim.idClaim)">Accepter </button>
+      </td>
+      <td>
+        <button class="btn btn-outline-danger btn-sm btn-neon" (click)="deleteClaim(claim.idClaim)">Delete </button>
+
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+
+<div class="paginator-container">
+ <!--<span class="selected-page-size">Selected: {{selectedPageSize}}</span>-->
+<mat-paginator [pageSize]="20" [pageSizeOptions]="[3, 5, 20]" #paginator showFirstLastButtons aria-label="Select page">
+</mat-paginator>
+</div>
+</div>

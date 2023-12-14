@@ -1,0 +1,48 @@
+<button class="btn btn-outline-light list" routerLink="/user/deliverynearestdriver"><i class="fa-solid fa-list fa-3x" style="color: #0723f2;"></i></button>
+<br>
+<table border="1" style="border:1px solid black;margin-left:auto;margin-right:auto;" class="table table-striped ">
+  <thead>
+    <tr id="header">
+      <th [ngStyle]="{'background-color': 'green', 'color': 'white'}">ID</th>
+      <th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Location</th>
+      <th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Delivery Date</th>
+      <th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Weight</th>
+      <th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Done</th>
+      <th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Price</th>
+      <th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Add Weight</th>
+      <th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Get Driver </th>
+      <th [ngStyle]="{'background-color': 'green', 'color': 'white'}">Find Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let delivery of deliveries| paginate: { itemsPerPage: 5, currentPage: p };">
+      <td>{{delivery.idDelivery}}</td>
+      <td>{{ delivery.location }}</td>
+      <td>{{ delivery.delivery_date }}</td>
+      <td>{{ delivery.weight }}</td>
+      <td>{{delivery.done}}</td>
+      <td>{{delivery.pricedelivery}}</td>
+      <td>
+        <button class="btn" (click)="openEditModal(delivery)"><i class="fa-solid fa-weight-scale fa-beat fa-2xl" style="color: #0000ff;"></i></button>
+      </td>
+      <td>
+        <button class="btn btn-outline-light" (click)="getNearestDriver(delivery.idDelivery)"><i class="fas fa-shipping-fast fa-3x" style="color: #09ad24e3;"></i></button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-outline-light" (click)="openDeliveryDriverModal(delivery.idDelivery)"><i class="fa-solid fa-money-bill-1-wave fa-beat-fade fa-2xl" style="color: #0b7525;"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls class="ngx-pagination" (pageChange)="p = $event"></pagination-controls>
+<ng-template #editModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Edit Delivery</h4>
+    <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-delivery-shop ></app-delivery-shop>
+  </div>
+</ng-template>

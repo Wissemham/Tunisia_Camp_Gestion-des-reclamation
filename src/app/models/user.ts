@@ -1,0 +1,30 @@
+import { Claim } from './claim';
+export class User {
+  idUser!: number;
+  username!: string;
+  password!: string;
+  firstname!: string;
+  lastname!: string;
+  birthday!: Date;
+  email!: string;
+  telephone !: number;
+  cin!: number;
+  shopname!: string;
+  shop_phone!: number;
+  postal_code!: number;
+  address!: string;
+  availability!: boolean;
+  provider!: string;
+  state!: string;
+  enable!: boolean;
+  //role!: Role;
+ // chatRooms: ChatRoom[];
+  //posts: Post[];
+  my_claims!: Claim[];
+  admin_claims!: Claim[];
+  //managed_ground: CampingGround;
+  //transactions: Transaction[];
+  shopper!: User;
+  drivers!: User[];
+  //deliveryList: Delivery[];
+}
